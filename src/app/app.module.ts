@@ -25,6 +25,7 @@ import { CpfComponent } from './projects/cpf/cpf.component';
   providers: [],
   bootstrap: [
     AppComponent,
-    MenuComponent]
+    MenuComponent,
+    CpfComponent]
 })
 export class AppModule { }

@@ -1,3 +1,7 @@
-.icone-cor{
-    color: chocolate;
+.customizada-teste{
+    text-align:center !important;
+    color:white;
+    background:#323232;
+    display:block;
+    padding:24px
 }

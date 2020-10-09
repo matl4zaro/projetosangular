@@ -1,1 +1,16 @@
-<p>cpf works!</p>
+<br><br>
+<div class="container">
+    <div class="row">
+        <div class="col-sm">
+            <button class="btn btn-info" (click)='aplicaCpf()'>
+                Gera 1 CPF
+            </button><br><br>
+        </div>
+        <div class="col-sm">
+            <li *ngFor="let item of cpfList; index as i"> {{ cpfList[i] }}</li>
+        </div>
+
+    </div>
+</div>
+
+<br><br>

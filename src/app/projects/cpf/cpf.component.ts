@@ -1,15 +1,23 @@
-import { Component, OnInit } from '@angular/core';
+import { Component } from '@angular/core';
 
 @Component({
   selector: 'app-cpf',
   templateUrl: './cpf.component.html',
-  styleUrls: ['./cpf.component.css']
 })
-export class CpfComponent implements OnInit {
 
-  constructor() { }
+export class CpfComponent {
 
-  ngOnInit(): void {
+  public cpfList: String[] = [];
+  public cpfGerado: String = 'oi';
+
+  geraCpf() : String {
+    this.cpfGerado = '10';
+    return 'oi';
+  }
+
+  aplicaCpf() {
+
+    this.cpfList.push(this.geraCpf());
   }
 
 }
