@@ -1,3 +1,4 @@
+import { CommonModule } from '@angular/common';
 import { NgModule } from '@angular/core';
 import { BrowserModule } from '@angular/platform-browser';
 
@@ -9,7 +10,6 @@ import { FooterComponent } from './navigation/footer/footer.component';
 import { HomeComponent } from './navigation/home/home.component';
 import { MenuComponent } from './navigation/menu/menu.component';
 import { CpfComponent } from './projects/cpf/cpf.component';
-import { ExemploComponent } from './teste/exemplo/exemplo.component';
 
 @NgModule({
   declarations: [
@@ -17,11 +17,11 @@ import { ExemploComponent } from './teste/exemplo/exemplo.component';
     FooterComponent,
     HomeComponent,
     MenuComponent,
-    CpfComponent,
-    ExemploComponent
+    CpfComponent
   ],
   imports: [
     BrowserModule,
+    CommonModule,
     [RouterModule.forRoot(rootRouterConfig, { useHash: false })]
   ],
   providers: [],

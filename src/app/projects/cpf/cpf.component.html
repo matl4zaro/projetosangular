@@ -2,15 +2,34 @@
 <div class="container">
     <div class="row">
         <div class="col-sm">
-            <button class="btn btn-info" (click)='aplicaCpf()'>
-                Gera 1 CPF
-            </button><br><br>
+            <div class="input-group mb-3">
+                <div class="input-group-prepend">
+                  <!-- <div class="input-group-text">
+                    <input type="checkbox" aria-label="Checkbox for following text input" id="checkMask">
+                    <label for="checkMask" class="form-check-label"> &nbsp; Com máscara </label>
+                  </div> -->
+                </div>
+                <button class="btn btn-outline-dark" style="color: steelblue; text-shadow: whitesmoke; font-weight: 500;" (click)='aplicaCpf()'>
+                    Gera CPF
+                </button>
+                <br><br>
+            </div>
         </div>
-        <div class="col-sm">
-            <li *ngFor="let item of cpfList; index as i"> {{ cpfList[i] }}</li>
+        
+        <div class="col-sm-9">
+            <ul class="list-group">
+                <button *ngFor="let item of cpfList; index as i" class="list-group-item col-sm-3"
+                    id="cpfButton" 
+                    (click)="copyClipboard(event)"
+                    style="text-align: center; font: x-large;"
+                    [ngClass]="(i % 2 === 0) ? 'fundo1' : 'fundo2'"
+                > 
+                    {{ cpfList[i] }}
+                </button>
+                
+            </ul>
         </div>
-
-    </div>
+    </div>    
 </div>
 
 <br><br>

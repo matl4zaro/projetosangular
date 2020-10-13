@@ -1,62 +1,67 @@
 import { Component } from '@angular/core';
+import { element } from 'protractor';
 
 @Component({
   selector: 'app-cpf',
   templateUrl: './cpf.component.html',
+  styleUrls: ['./cpf.component.css']
 })
 
 export class CpfComponent {
-
   public cpfList: String[] = [];
   public cpfGerado: string = '';
+  public mascara: boolean = true;
+  // public iniciaZero: number = 0; // 1 for: whatever ... 0 for: start with zero ... -1 for: do not start with zero
 
   geraCpf() : string {
-    return this.cpfGerado = String(Math.floor(Math.random()*999999999));
+    let gerado = this.cpfGerado = String(Math.floor(Math.random()*999999999));
+    while (gerado.length < 9) {
+      gerado = String(Math.floor(Math.random()*10)) + gerado;
+    }
+    return gerado;
   }
 
   verificadorValidoCpf(cpf : string) : string {
-    while (cpf.length < 9) {
-      cpf += '0' + cpf;
-    }
     let dig10 = 0;
     let dig11 = 0;
     console.log(cpf);
 
     for(let i = 1; i <= 9; i++) {
-        dig10 += Number(cpf[i-1])*(11-i);
-        dig11 += Number(cpf[i-1])*(12-i);
-    };
-    dig11 += Number(cpf[9]) * 2;
-    dig10 = dig10 * 10 % 11;
-    dig11 = dig11 * 10 % 11;
+        dig10 += Number(cpf[i-1]) * (11 - i);
+        dig11 += Number(cpf[i-1]) * (12 - i);
+      };
+    dig10 = (dig10 * 10) % 11;
     
-    return (String(dig10) + String(dig11));
+    dig11 += Number(dig10) * 2;
+    dig11 = (dig11 * 10) % 11;
+
+    
+    return ((dig10 == 10 || dig11 == 10) ? '0' : (String(dig10) + String(dig11)));
 }
 
   aplicaCpf() {
     let part1 = this.geraCpf();
+    console.log(part1);
     let part2 = this.verificadorValidoCpf(part1);
-    if (isNaN(Number(part2))){
-      // this.cpfList.push('erro');  
+    if ( part2 == '0' ) {
       this.aplicaCpf();
     } else {
-      console.log(part1);
-      console.log(part1.length);
-      console.log(part2);
-      console.log(part2.length);
-      this.cpfList.push(this.maskCpf(part1.concat(part2)));
+      let comMascara = true;
+    
+
+      comMascara ? this.cpfList.push(this.maskCpf(part1.concat(part2))) : this.cpfList.push(part1.concat(part2));
     }
   }
 
   maskCpf(cpfUnmasked : string) : string {
     let masked = '';
-    let zeros = '';
-    for (let i = 0; i < (11 - cpfUnmasked.length); i++){
-      zeros += '0'+zeros;
-    }
-    masked = zeros.concat(cpfUnmasked);
-    masked = masked[0]+masked[1]+masked[2]+'.'+masked[3]+masked[4]+masked[5]+'.'+masked[6]+masked[7]+masked[8]+'-'+masked[9]+masked[10];
+    masked = cpfUnmasked[0]+cpfUnmasked[1]+cpfUnmasked[2]+'.'+cpfUnmasked[3]+cpfUnmasked[4]+cpfUnmasked[5]+'.'+cpfUnmasked[6]+cpfUnmasked[7]+cpfUnmasked[8]+'-'+cpfUnmasked[9]+cpfUnmasked[10];
+
     return masked;
   }
 
+  // cpf-btn-id
+  copyClipboard() : void {
+    // PAREI AQUI....
+}
 }
