@@ -1,5 +1,6 @@
 import { Component } from '@angular/core';
 import { element } from 'protractor';
+import { Interface } from 'readline';
 
 @Component({
   selector: 'app-cpf',
@@ -60,8 +61,13 @@ export class CpfComponent {
     return masked;
   }
 
-  // cpf-btn-id
   copyClipboard() : void {
-    // PAREI AQUI....
+  document.addEventListener('copy', (e: ClipboardEvent) => {
+    e.clipboardData.setData('text/plain', String(document.activeElement.textContent));
+    e.preventDefault();
+    document.removeEventListener('copy', null);
+  });
+  document.execCommand('copy');
+  alert('CPF copiado: ' + document.activeElement.textContent);
 }
 }

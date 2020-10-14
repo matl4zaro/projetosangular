@@ -3,12 +3,7 @@
     <div class="row">
         <div class="col-sm">
             <div class="input-group mb-3">
-                <div class="input-group-prepend">
-                  <!-- <div class="input-group-text">
-                    <input type="checkbox" aria-label="Checkbox for following text input" id="checkMask">
-                    <label for="checkMask" class="form-check-label"> &nbsp; Com máscara </label>
-                  </div> -->
-                </div>
+                
                 <button class="btn btn-outline-dark" style="color: steelblue; text-shadow: whitesmoke; font-weight: 500;" (click)='aplicaCpf()'>
                     Gera CPF
                 </button>
@@ -20,16 +15,20 @@
             <ul class="list-group">
                 <button *ngFor="let item of cpfList; index as i" class="list-group-item col-sm-3"
                     id="cpfButton" 
-                    (click)="copyClipboard(event)"
-                    style="text-align: center; font: x-large;"
+                    (click)="copyClipboard()"
+                    style="text-align: center; font: x-large; margin: 5px; border-radius: 5px;"
                     [ngClass]="(i % 2 === 0) ? 'fundo1' : 'fundo2'"
                 > 
                     {{ cpfList[i] }}
                 </button>
-                
+                <br>
             </ul>
         </div>
     </div>    
+    <div class="alert alert-dark" role="alert" style="text-align: center;">
+        <a class="alert-link">Para Copiar</a> clique no botão do CPF desejado.
+    </div>
 </div>
+
 
 <br><br>
