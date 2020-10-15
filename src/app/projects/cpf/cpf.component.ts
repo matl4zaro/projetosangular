@@ -1,6 +1,4 @@
 import { Component } from '@angular/core';
-import { element } from 'protractor';
-import { Interface } from 'readline';
 
 @Component({
   selector: 'app-cpf',
