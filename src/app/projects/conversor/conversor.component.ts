@@ -1,16 +1,12 @@
-import { Component, OnInit } from '@angular/core';
+import { Component } from '@angular/core';
 
 @Component({
   selector: 'app-conversor',
   templateUrl: './conversor.component.html',
   styleUrls: ['./conversor.component.css']
 })
-export class ConversorComponent implements OnInit {
+export class ConversorComponent {
 
   constructor() { }
-
-  ngOnInit(): void {
-    var top:string = 'TOP';
-  }
   x = document.getElementById('toConv');
 }

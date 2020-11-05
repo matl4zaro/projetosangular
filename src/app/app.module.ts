@@ -11,6 +11,7 @@ import { HomeComponent } from './navigation/home/home.component';
 import { MenuComponent } from './navigation/menu/menu.component';
 import { CpfComponent } from './projects/cpf/cpf.component';
 import { ConversorComponent } from './projects/conversor/conversor.component';
+import { NgbModule } from '@ng-bootstrap/ng-bootstrap';
 
 @NgModule({
   declarations: [
@@ -24,7 +25,8 @@ import { ConversorComponent } from './projects/conversor/conversor.component';
   imports: [
     BrowserModule,
     CommonModule,
-    [RouterModule.forRoot(rootRouterConfig, { useHash: false })]
+    [RouterModule.forRoot(rootRouterConfig, { useHash: false })],
+    NgbModule
   ],
   providers: [],
   bootstrap: [

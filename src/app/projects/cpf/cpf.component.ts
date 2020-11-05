@@ -1,4 +1,6 @@
-import { Component } from '@angular/core';
+import { Component, OnInit } from '@angular/core';
+import { Subject } from 'rxjs';
+import { debounceTime } from 'rxjs/operators';
 
 @Component({
   selector: 'app-cpf',
@@ -6,12 +8,30 @@ import { Component } from '@angular/core';
   styleUrls: ['./cpf.component.css']
 })
 
-export class CpfComponent {
+export class CpfComponent implements OnInit {
   public cpfList: String[] = [];
   public cpfGerado: string = '';
   public mascara: boolean = true;
-  // public iniciaZero: number = 0; // 1 for: whatever ... 0 for: start with zero ... -1 for: do not start with zero
+  
+//~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+  private _success = new Subject<string>();
 
+  staticAlertClosed = false;
+  successMessage = '';
+
+  ngOnInit(): void {
+    setTimeout(() => this.staticAlertClosed = true, 20000);
+
+    this._success.subscribe(message => this.successMessage = message);
+    this._success.pipe(
+      debounceTime(5000)
+    ).subscribe(() => this.successMessage = '');
+  }
+
+  public changeSuccessMessage() {
+    this._success.next(`${new Date()} - Message successfully changed.`);
+  }
+//~~~~~~~~~~~~~~~~~~~~~~~~~~~~
   geraCpf() : string {
     let gerado = this.cpfGerado = String(Math.floor(Math.random()*999999999));
     while (gerado.length < 9) {
