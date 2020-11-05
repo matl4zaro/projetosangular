@@ -10,6 +10,7 @@ import { FooterComponent } from './navigation/footer/footer.component';
 import { HomeComponent } from './navigation/home/home.component';
 import { MenuComponent } from './navigation/menu/menu.component';
 import { CpfComponent } from './projects/cpf/cpf.component';
+import { ConversorComponent } from './projects/conversor/conversor.component';
 
 @NgModule({
   declarations: [
@@ -17,7 +18,8 @@ import { CpfComponent } from './projects/cpf/cpf.component';
     FooterComponent,
     HomeComponent,
     MenuComponent,
-    CpfComponent
+    CpfComponent,
+    ConversorComponent
   ],
   imports: [
     BrowserModule,

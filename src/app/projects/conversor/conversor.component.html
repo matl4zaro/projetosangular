@@ -1,0 +1,20 @@
+
+<div class="principal">
+    <div class="dropdown" (keyup)="0">
+        <input #converter placeholder="Digite o valor em metros">
+        <div class="dropdown-content">
+          <span>{{converter.value * 100}} cm</span><hr>
+          <span>{{converter.value * 1}} m</span><hr>
+          <span>{{converter.value/1000}} km</span>
+        </div>
+    </div>
+    <div class="dropdown" (keyup)="0">
+        <input #temperatura placeholder="Temperatura em celsius">
+        <div class="dropdown-content">
+          <span>{{ temperatura.value * (9/5) + 32 }} ºF</span><hr>
+          <span>{{ temperatura.value * 1 }} ºC</span><hr>
+          <span>{{ temperatura.value * 1 + 273 + 15/100 }} K</span>
+        </div>
+    </div>
+</div>
+

@@ -53,10 +53,19 @@ export class CpfComponent {
   }
 
   maskCpf(cpfUnmasked : string) : string {
-    let masked = '';
-    masked = cpfUnmasked[0]+cpfUnmasked[1]+cpfUnmasked[2]+'.'+cpfUnmasked[3]+cpfUnmasked[4]+cpfUnmasked[5]+'.'+cpfUnmasked[6]+cpfUnmasked[7]+cpfUnmasked[8]+'-'+cpfUnmasked[9]+cpfUnmasked[10];
-
-    return masked;
+    
+    let arr:string[] = [
+      ...cpfUnmasked.slice(0,3),
+      '.',
+      ...cpfUnmasked.slice(3,6),
+      '.',
+      ...cpfUnmasked.slice(6,9),
+      '-',
+      ...cpfUnmasked.slice(9,11)
+    ]
+    
+    return arr.join('');
+    
   }
 
   copyClipboard() : void {
