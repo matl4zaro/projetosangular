@@ -1,40 +1,27 @@
 <br><br>
-<div class="container main-container">
+<div class="flex-container">
     <div class="alert" style="text-align: center;">
         <!-- <div class="col-sm"> -->
             <div class="input-group mb-12">
-                <button class="button is-link is-outlined" style="width: 100%;" (click)='aplicaCpf()'>Gera CPF</button>
+                <button type="button" class="btn btn-primary" style="width: 100%;"
+                  (click)='aplicaCpf()'>Gera CPF</button>
             </div>
         </div>
         <!-- TESTE BULMA -->
-        <div class="rows" style="padding: 0 8%;">
-                <div class="row" style="max-width: 100%; text-align: center;">
+        <div class="rows">
+                <div class="row" id="cpftable">
                     <button *ngFor="let item of cpfList; index as i"
-                        class="list-group-item"
+                        class="list-group-item distanciamento"
                         id="cpfButton"
                         (click)="copyClipboard()"
-                        style="text-align: center; margin: 5px; border-radius: 5px;"
-                        [ngClass]="(i % 2 === 0) ? 'fundo1' : 'fundo2'"
-                    >
+                        [ngClass]="(i % 2 === 0) ? 'fundo1' : 'fundo2'">
                         {{ cpfList[i] }}
                     </button>
                     <br>
                 </div>
         </div>
 
-        <!-- <div class="col-sm-9">
-            <ul class="list-group">
-                <button *ngFor="let item of cpfList; index as i" class="list-group-item col-sm-3"
-                    id="cpfButton"
-                    (click)="copyClipboard()"
-                    style="text-align: center; font: x-large; margin: 5px; border-radius: 5px;"
-                    [ngClass]="(i % 2 === 0) ? 'fundo1' : 'fundo2'"
-                >
-                    {{ cpfList[i] }}
-                </button>
-                <br>
-            </ul>
-        </div> -->
+
        <br>
     <div class="alert alert-dark" style="text-align: center;">
         <a class="alert-link">Para Copiar clique no CPF desejado.</a>

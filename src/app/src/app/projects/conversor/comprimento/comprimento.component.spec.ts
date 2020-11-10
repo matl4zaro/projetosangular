@@ -1,20 +1,20 @@
 import { ComponentFixture, TestBed } from '@angular/core/testing';
 
-import { ConversorComponent } from './conversor.component';
+import { ComprimentoComponent } from './comprimento.component';
 
-describe('ConversorComponent', () => {
-  let component: ConversorComponent;
-  let fixture: ComponentFixture<ConversorComponent>;
+describe('ComprimentoComponent', () => {
+  let component: ComprimentoComponent;
+  let fixture: ComponentFixture<ComprimentoComponent>;
 
   beforeEach(async () => {
     await TestBed.configureTestingModule({
-      declarations: [ ConversorComponent ]
+      declarations: [ ComprimentoComponent ]
     })
     .compileComponents();
   });
 
   beforeEach(() => {
-    fixture = TestBed.createComponent(ConversorComponent);
+    fixture = TestBed.createComponent(ComprimentoComponent);
     component = fixture.componentInstance;
     fixture.detectChanges();
   });

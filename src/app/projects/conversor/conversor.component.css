@@ -1,22 +1,9 @@
-.dropdown {
-    position: relative;
-    display: inline-block;
-  }
-  
-  .dropdown-content {
-    display: none;
-    position: absolute;
-    background-color: #f9f9f9;
-    min-width: 160px;
-    box-shadow: 0px 8px 16px 0px rgba(0,0,0,0.2);
-    padding: 12px 16px;
-    z-index: 1;
-  }
-  
-  .dropdown:hover .dropdown-content {
-    display: block;
-  }
 
-  .principal {
-    align-content: center;
-  }
+.principal {
+  align-content: center;
+}
+
+.classe2 {
+  background: linear-gradient(90deg, rgb(199, 111, 81) 0%, rgb(73, 68, 58) 35%, rgb(0, 35, 80) 94%);
+  color: rgba(255, 255, 255, 100)
+}

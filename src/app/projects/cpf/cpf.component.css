@@ -1,6 +1,18 @@
 .fundo1{
-    background-color: rgb(196, 196, 196);
+    background-color: rgba(14, 140, 190, 0.750);
 }
 .fundo2{
-    background-color: rgb(148, 148, 148);
+    background-color: rgba(190, 108, 14, 0.75);
+}
+
+.distanciamento{
+  text-align: center;
+  margin: 5px;
+  border-radius: 5px;
+}
+
+#cpftable{
+  display: flex;
+  justify-content: flex-start;
+  margin-left: 5px;
 }

@@ -12,6 +12,7 @@ import { MenuComponent } from './navigation/menu/menu.component';
 import { CpfComponent } from './projects/cpf/cpf.component';
 import { ConversorComponent } from './projects/conversor/conversor.component';
 import { NgbModule } from '@ng-bootstrap/ng-bootstrap';
+import { ComprimentoComponent } from './src/app/projects/conversor/comprimento/comprimento.component';
 
 @NgModule({
   declarations: [
@@ -20,7 +21,8 @@ import { NgbModule } from '@ng-bootstrap/ng-bootstrap';
     HomeComponent,
     MenuComponent,
     CpfComponent,
-    ConversorComponent
+    ConversorComponent,
+    ComprimentoComponent
   ],
   imports: [
     BrowserModule,

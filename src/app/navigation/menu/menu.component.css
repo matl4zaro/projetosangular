@@ -1,7 +1,15 @@
-.customizada-teste{
-    text-align:center !important;
-    color:white;
-    background:#323232;
-    display:block;
-    padding:24px
+#home-icon{
+  color: rgb(219, 235, 0);
+}
+
+#cpf-icon{
+  color:rgb(95, 210, 255);
+}
+
+#conversor-icon{
+  color:rgba(172, 255, 47, 0.651);
+}
+
+#futuros-icon{
+  color:chocolate;
 }

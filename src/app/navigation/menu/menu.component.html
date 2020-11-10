@@ -4,7 +4,10 @@
     <a class="navbar-brand" href="#">
         <i class="fa fa-border">Página</i>
     </a>
-    <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
+    <button class="navbar-toggler" type="button"
+      data-toggle="collapse" data-target="#navbarSupportedContent"
+      aria-controls="navbarSupportedContent" aria-expanded="false"
+      aria-label="Toggle navigation">
       <span class="navbar-toggler-icon"></span>
     </button>
 
@@ -12,26 +15,26 @@
         <ul class="navbar-nav mr-auto">
           <li class="nav-item">
             <a class="nav-link" [routerLink]="['/home']">
-              <i class="fa fa-home fa-fw" style="color:rgb(207, 221, 4)"></i> 
+              <i id="home-icon" class="fa fa-home fa-fw"></i>
               Home
             </a>
           </li>
           <li class="nav-item">
             <a class="nav-link" [routerLink]="['/cpf']">
-              <i class="fa fa-drivers-license fa-fw" style="color:rgb(95, 210, 255)"></i>
+              <i class="fa fa-drivers-license fa-fw" id="cpf-icon"></i>
               Gerador CPF
             </a>
           </li>
           <li class="nav-item">
             <a class="nav-link" [routerLink]="['/conversor']">
-              <i class="fa fa-university fa-fw" style="color:rgba(172, 255, 47, 0.651)"></i>
+              <i class="fa fa-university fa-fw" id="conversor-icon"></i>
               Conversor
             </a>
           </li>
 
           <li class="nav-item">
             <a class="nav-link disabled" [routerLink]="['/endereco']" tabindex="-1" aria-disabled="true">
-                <i class="fa fa-bolt fa-fw" style="color:chocolate"></i> 
+                <i class="fa fa-bolt fa-fw" id="futuros-icon"></i>
                 Futuros
             </a>
           </li>
@@ -42,5 +45,5 @@
       <input class="form-control mr-sm-2" type="search" placeholder="Procurar" aria-label="Search">
       <button class="btn btn-outline-warning my-2 my-sm-0" type="submit">Procurar</button>
     </form>
-    
+
   </nav>

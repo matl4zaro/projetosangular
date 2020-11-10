@@ -1,6 +1,7 @@
 
 <div class="principal">
-    <div class="dropdown" (keyup)="0">
+    <!-- Versão Anterior -->
+  <!-- <div class="dropdown" (keyup)="0">
         <input #converter placeholder="Digite o valor em metros">
         <div class="dropdown-content">
           <span>{{converter.value * 100}} cm</span><hr>
@@ -15,6 +16,50 @@
           <span>{{ temperatura.value * 1 }} ºC</span><hr>
           <span>{{ temperatura.value * 1 + 273 + 15/100 }} K</span>
         </div>
-    </div>
+    </div> -->
+  <h2  class="classe2">
+    <span id="pagetitle"> Conversor</span>
+  </h2>
+
+  <div class="d-flex">
+    <ul ngbNav #nav="ngbNav"
+      [(activeId)]="active"
+      class="nav-pills"
+      orientation="vertical">
+
+      <li ngbNavItem="forca">
+        <a ngbNavLink>Força</a>
+        <ng-template ngbNavContent>
+
+        </ng-template>
+      </li>
+
+      <li ngbNavItem="comprimento">
+        <a ngbNavLink>Comprimento</a>
+        <ng-template ngbNavContent>
+          <div>
+            <input type="text" (keyup)="digitando($event)" placeholder="Digite o valor em metros">
+            <hr><span>{{ valoresConvertidos[0] }} cm</span>
+            <hr><span>{{ valoresConvertidos[1] }} m</span>
+            <hr><span>{{ valoresConvertidos[2] }} km</span>
+          </div>
+        </ng-template>
+      </li>
+
+      <li ngbNavItem="temperatura">
+        <a ngbNavLink>Temperatura</a>
+        <ng-template ngbNavContent>
+          <p>Conteúdo 3</p>
+        </ng-template>
+      </li>
+    </ul>
+
+    <div [ngbNavOutlet]="nav" class="ml-4"></div>
+
+  </div>
+
+  <pre>Ativo: {{ active }}</pre>
+
+
 </div>
 
