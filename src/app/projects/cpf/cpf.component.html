@@ -20,7 +20,7 @@
                         id="cpfButton"
                         (click)="copyClipboard()"
                         [ngClass]="(i % 2 === 0) ? 'fundo1' : 'fundo2'"
-                        [style.background-color]=" corDaClasse ? corDaClasse : ''"
+                        [style.background]=" corDaClasse ? corDaClasse : ''"
                         >
                         {{ cpfList[i] }}
                     </button>
