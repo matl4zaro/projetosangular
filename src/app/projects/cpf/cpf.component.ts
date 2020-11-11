@@ -12,12 +12,13 @@ export class CpfComponent implements OnInit {
   public cpfList: String[] = [];
   public cpfGerado: string = '';
   public mascara: boolean = true;
-  
+
 //~~~~~~~~~~~~~~~~~~~~~~~~~~~~
   private _success = new Subject<string>();
 
   staticAlertClosed = false;
   successMessage = '';
+  public corDaClasse:string = '';
 
   ngOnInit(): void {
     setTimeout(() => this.staticAlertClosed = true, 20000);
@@ -50,13 +51,13 @@ export class CpfComponent implements OnInit {
         dig11 += Number(cpf[i-1]) * (12 - i);
       };
     dig10 = (dig10 * 10) % 11;
-    
+
     dig11 += Number(dig10) * 2;
     dig11 = (dig11 * 10) % 11;
 
-    
+
     return ((dig10 == 10 || dig11 == 10) ? '0' : (String(dig10) + String(dig11)));
-}
+  }
 
   aplicaCpf() {
     let part1 = this.geraCpf();
@@ -66,14 +67,14 @@ export class CpfComponent implements OnInit {
       this.aplicaCpf();
     } else {
       let comMascara = true;
-    
+
 
       comMascara ? this.cpfList.push(this.maskCpf(part1.concat(part2))) : this.cpfList.push(part1.concat(part2));
     }
   }
 
   maskCpf(cpfUnmasked : string) : string {
-    
+
     let arr:string[] = [
       ...cpfUnmasked.slice(0,3),
       '.',
@@ -83,9 +84,9 @@ export class CpfComponent implements OnInit {
       '-',
       ...cpfUnmasked.slice(9,11)
     ]
-    
+
     return arr.join('');
-    
+
   }
 
   copyClipboard() : void {
@@ -93,8 +94,12 @@ export class CpfComponent implements OnInit {
     e.clipboardData.setData('text/plain', String(document.activeElement.textContent));
     e.preventDefault();
     document.removeEventListener('copy', null);
-  });
-  document.execCommand('copy');
-  alert('CPF copiado: ' + document.activeElement.textContent);
-}
+    });
+    document.execCommand('copy');
+    alert('CPF copiado: ' + document.activeElement.textContent);
+  }
+
+  mudaClasse(evento: KeyboardEvent){
+    this.corDaClasse = (<HTMLInputElement>evento.target).value;
+  }
 }

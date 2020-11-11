@@ -38,10 +38,11 @@
         <a ngbNavLink>Comprimento</a>
         <ng-template ngbNavContent>
           <div>
-            <input type="text" (keyup)="digitando($event)" placeholder="Digite o valor em metros">
-            <hr><span>{{ valoresConvertidos[0] }} cm</span>
-            <hr><span>{{ valoresConvertidos[1] }} m</span>
-            <hr><span>{{ valoresConvertidos[2] }} km</span>
+            <input type="text" (keyup)="digitando($event)"
+              placeholder="Digite o valor em metros">
+            <hr><span class="valores">{{ valoresConvertidos[0] }} cm</span>
+            <hr><span class="valores">{{ valoresConvertidos[1] }} m</span>
+            <hr><span class="valores">{{ valoresConvertidos[2] }} km</span>
           </div>
         </ng-template>
       </li>
@@ -49,7 +50,13 @@
       <li ngbNavItem="temperatura">
         <a ngbNavLink>Temperatura</a>
         <ng-template ngbNavContent>
-          <p>Conteúdo 3</p>
+          <div>
+            <input type="text" (keyup)="digitando($event)"
+              placeholder="Digite o valor em metros">
+            <hr><span class="valores">{{ valoresConvertidos[0] }} cm</span>
+            <hr><span class="valores">{{ valoresConvertidos[1] }} m</span>
+            <hr><span class="valores">{{ valoresConvertidos[2] }} km</span>
+          </div>
         </ng-template>
       </li>
     </ul>

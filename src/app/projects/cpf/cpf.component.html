@@ -2,10 +2,15 @@
 <div class="flex-container">
     <div class="alert" style="text-align: center;">
         <!-- <div class="col-sm"> -->
+            <label> Digite nesse campo e altere as cores </label>
+            <input type="text" (keyup)="mudaClasse($event)" >
+            <hr>
             <div class="input-group mb-12">
+
                 <button type="button" class="btn btn-primary" style="width: 100%;"
                   (click)='aplicaCpf()'>Gera CPF</button>
             </div>
+            <hr>
         </div>
         <!-- TESTE BULMA -->
         <div class="rows">
@@ -14,10 +19,12 @@
                         class="list-group-item distanciamento"
                         id="cpfButton"
                         (click)="copyClipboard()"
-                        [ngClass]="(i % 2 === 0) ? 'fundo1' : 'fundo2'">
+                        [ngClass]="(i % 2 === 0) ? 'fundo1' : 'fundo2'"
+                        [style.background-color]=" corDaClasse ? corDaClasse : ''"
+                        >
                         {{ cpfList[i] }}
                     </button>
-                    <br>
+                    <hr>
                 </div>
         </div>
 

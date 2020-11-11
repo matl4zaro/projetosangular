@@ -7,3 +7,8 @@
   background: linear-gradient(90deg, rgb(199, 111, 81) 0%, rgb(73, 68, 58) 35%, rgb(0, 35, 80) 94%);
   color: rgba(255, 255, 255, 100)
 }
+
+.valores {
+  display: flex;
+  justify-content: flex-end;
+}

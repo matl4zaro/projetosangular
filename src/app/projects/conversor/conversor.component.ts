@@ -7,6 +7,11 @@ import { Component } from '@angular/core';
 })
 export class ConversorComponent {
 
+  constructor() {
+
+  }
+
+
   active:string = 'forca';
   x: number = 0;
   xy = this.x * 100;
@@ -19,4 +24,6 @@ export class ConversorComponent {
     this.valoresConvertidos[1] = ( valor * 1);
     this.valoresConvertidos[2] = ( valor / 1000);
   }
+
+
 }
